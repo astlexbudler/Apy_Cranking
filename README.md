@@ -1,9 +1,8 @@
-# 크랭킹(진행중)
+# 크랭킹(진행중) * 작성중
 
 원격 차량 정비 예약 서비스.
 Django와 Flutter Webview를 이용해서 웹사이트와 앱을 같이 제작합니다.
 사용자용 앱과 파트너용 앱이 별도로 구분되며, 하나의 프로젝트로 두 개의 앱을 제공합니다.
-
 
 ---
 
@@ -16,82 +15,87 @@ Cranking은 일반 사용자(user), 파트너 회원(partner), 관리자(admin)�
 
 ---
 
+## 주의
+
+⚠️ 시크릿 인증 키를 직접 하드코딩하지 마세요. credentials.json 파일에 인증키를 저장하고 따로 관리하여야합니다.
+
+---
+
 ## 프로젝트 구조
 
 프로젝트 명: Cranking 크랭킹
 
--**app_core**:
+- **app_core**:
 프로젝트의 기본 설정과 관련된 앱. 사전 설정 데이터 및 스케줄러, 기본적인 설정과 관련된 테이블이 정의되어있습니다.
- - MODEL:
+  - MODEL:
 UPLOAD(파일 업로드), CERT_CODE(이메일 인증 코드), CrankingUser(사용자), SERVER_SETTING(서버 설정), SERVER_LOG(서버 기록)
 
--**app_api**:
+- **app_api**:
 API 요청 주소와 해당 요청에 대한 처리가 정의되어있는 앱. 별도로 정의된 테이블은 없습니다.
 
--**app_user**:
+- **app_user**:
 사용자 앱. 기본 사용자 페이지들에 대한 주소와 해당 요청에 대한 처리가 정의되어있는 앱.  
 주 페이지들이 정의되어있습니다.
- - PATH:
-/(시작 및 로그인 페이지)
-/login_kakao(카카오 로그인 페이지)
-/login_naver(네이버 로그인 페이지)
-/login_apple(애플 로그인 페이지)
-/register(회원가입 페이지, SNS 가입 포함)
-/find_account(계정 복구 페이지. 이메일 인증 후 아이디 확인 및 비밀번호 초기화 페이지로 이동)
-/reset_account(계정 복구 페이지. 가입된 아이디를 확인하고 비밀번호 초기화를 진행)
-/profile(사용자 프로필 정보 페이지. 내용 수정 가능)
-/map(지도 페이지. 서비스에 가입된 파트너들의 정보 확인 가능. 세부 정보는 모달을 이용하여 표시)
-/contact(관리자 정보 페이지. 필수)
+  - PATH:
+/(시작 및 로그인 페이지)  
+/login_kakao(카카오 로그인 페이지)  
+/login_naver(네이버 로그인 페이지)  
+/login_apple(애플 로그인 페이지)  
+/register(회원가입 페이지, SNS 가입 포함)  
+/find_account(계정 복구 페이지. 이메일 인증 후 아이디 확인 및 비밀번호 초기화 페이지로 이동)  
+/reset_account(계정 복구 페이지. 가입된 아이디를 확인하고 비밀번호 초기화를 진행)  
+/profile(사용자 프로필 정보 페이지. 내용 수정 가능)  
+/map(지도 페이지. 서비스에 가입된 파트너들의 정보 확인 가능. 세부 정보는 모달을 이용하여 표시)  
+/contact(관리자 정보 페이지. 필수)  
 /terms(이용 약관 페이지. 필수)
 
--**app_post**:
+- **app_post**:
 게시글 관련 앱. 공지사항 및 이벤트 등의 게시글에 대한 처리가 정의되어있습니다.
- - PATH:
-/post(게시글 세부 정보 페이지)
-/post/notice(공지사항 페이지)
-/post/event(이벤트 페이지)
-/post/write_post(게시글 작성 페이지. 관리자만 접근 가능합니다.)
+  - PATH:
+/post(게시글 세부 정보 페이지)  
+/post/notice(공지사항 페이지)  
+/post/event(이벤트 페이지)  
+/post/write_post(게시글 작성 페이지. 관리자만 접근 가능합니다.)  
 /post/rewrite_post(게시글 수정 페이지. 관리자만 접근 가능합니다.)
- - MODEL:
+  - MODEL:
 POST(게시글), COMMENT(댓글)
 
--**app_order**:
+- **app_order**:
 차량 정비 요청과 관련된 앱. 차량 정비 예약 및 주문 처리에 대한 정의가 되어있습니다.
- - PATH:
-/order(활성 요청 확인 페이지)
-/order/request(새 정비 요청 생성하기)
-/order/histories(내 요청 기록들 확인 페이지)
-/order/history(내 요청 기록 상세 페이지)
+  - PATH:
+/order(활성 요청 확인 페이지)  
+/order/request(새 정비 요청 생성하기)  
+/order/histories(내 요청 기록들 확인 페이지)  
+/order/history(내 요청 기록 상세 페이지)  
 /order/write_review(파트너 정비 리뷰 작성 페이지)
- - MODEL:
+  - MODEL:
 ORDER(정비 요청), ESTIMATE(예상 견적)
 
--**app_message**:
+- **app_message**:
 채팅 및 알림 앱. 채팅 및 알림 관련 요청에 대한 처리가 정의되어있습니다.
- - PATH:
+  - PATH:
 /chat(채팅방 페이지)
- - MODEL:
+  - MODEL:
 CHAT(채팅), NOTIFICATION(알림)
 
--**app_partner**:
+- **app_partner**:
 파트너 앱. 파트너 요청에 대한 처리가 정의되어있습니다.
- - PATH:
-/partner(파트너 로그인 및 메인 페이지)
-/partner/register(파트너 가입 요청 작성 페이지)
-/partner/profile(파트너 프로필 페이지. 수정도 가능)
-/partner/orders(견적 요청들 확인 페이지)
-/partner/history(완료된 견적 요청들 확인 페이지)
+  - PATH:
+/partner(파트너 로그인 및 메인 페이지)  
+/partner/register(파트너 가입 요청 작성 페이지)  
+/partner/profile(파트너 프로필 페이지. 수정도 가능)  
+/partner/orders(견적 요청들 확인 페이지)  
+/partner/history(완료된 견적 요청들 확인 페이지)  
 /partner/chats(대화중인 채팅방 페이지)
 
-
--**app_supervisor**:
+- **app_supervisor**:
 관리자 앱. 관리자 요청에 대한 처리가 정의되어있습니다.
- - PATH:
-/supervisor(관리자 로그인 및 페인 페이지)
-/supervisor/users(사용자 목록 페이지)
-/supervisor/partners(파트너 목록 페이지. 가입 신청 확인 가능)
-/supervisor/orders(모든 견적 요청 확인 페이지)
-/supervisor/order_detail(견적 상세 확인 페이지)
+  - PATH:
+/supervisor(관리자 로그인 및 페인 페이지)  
+/supervisor/users(사용자 목록 페이지)  
+/supervisor/partners(파트너 목록 페이지. 가입 신청 확인 가능)  
+/supervisor/orders(모든 견적 요청 확인 페이지)  
+/supervisor/order_detail(견적 상세 확인 페이지)  
 /supervisor/send_push(푸시 알림 발송 페이지)
 
 ---
