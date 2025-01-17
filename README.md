@@ -13,6 +13,14 @@ Cranking은 일반 사용자(user), 파트너 회원(partner), 관리자(admin)�
 채팅을 통해 추가 협의를 진행한 후 정비를 예약하고, 정비 완료 후 리뷰를 남길 수 있습니다.
 관리자는 서비스 운영 전반을 관리하고 사용자 및 파트너의 요청을 처리합니다.
 
+### 프로젝트 실행 방법
+
+1. Django/{project_name} 디렉토리로 이동합니다.
+2. 가상환경을 생성하고 실행합니다.
+3. OS에 따라서 Win 기반 OS의 경우 init.ps1(PowerShell)을 실행합니다. Linux 기반 OS의 경우 init.sh를 실행합니다. requirements와 migration 및 초기 필요한 데이터가 자동으로 구성됩니다.
+4. python manage.py runserver 또는 python3 manage.py runserver 명령어를 이용하여 Django 프로젝트를 실행할 수 있습니다.
+5. 데이터베이스 초기화 시 다시 init 파일을 실행하여 초기 상태로 되돌릴 수 있습니다. 작성된 코드는 복구되지 않습니다.
+
 ---
 
 ## 주의
