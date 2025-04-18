@@ -1,0 +1,1 @@
+import{j as e,T as a}from"./index-OSHjpEom.js";function n({ok:r}){return e.jsx(a,{variant:"caption",color:r==!0?"success.main":r==!1?"error.main":"text.secondary",children:r==!0?"사용 가능한 닉네임입니다.":r==!1?"닉네임은 2자 이상 입력해주세요.":"사용하실 닉네임을 입력해주세요."})}export{n as C};

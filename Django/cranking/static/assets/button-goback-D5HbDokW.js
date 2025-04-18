@@ -1,0 +1,1 @@
+import{j as s,B as i,T as o,a,D as t}from"./index-OSHjpEom.js";function x(){return s.jsxs(i,{sx:{mb:4},children:[s.jsxs(o,{variant:"caption",sx:{mb:3,color:"text.disabled"},children:[s.jsx(a,{icon:"ic:baseline-arrow-back-ios",sx:{width:12,height:12,color:"text.disabled"}}),"뒤로가기"]}),s.jsx(t,{sx:{my:2}})]})}export{x as B};

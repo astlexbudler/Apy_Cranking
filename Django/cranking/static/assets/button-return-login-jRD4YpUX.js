@@ -1,0 +1,1 @@
+import{j as n,L as i,R as t,p as s,a}from"./index-OSHjpEom.js";function e(){return n.jsxs(i,{component:t,href:s.signIn,color:"inherit",variant:"subtitle2",sx:[{mt:3,gap:.5,mx:"auto",alignItems:"center",display:"inline-flex"}],children:[n.jsx(a,{width:16,icon:"eva:arrow-ios-back-fill"}),"로그인 페이지로"]})}export{e as B};

@@ -1,0 +1,1 @@
+import{j as e,B as o,T as a}from"./index-OSHjpEom.js";function l({sx:r,title:i,description:t,...n}){return e.jsxs(o,{sx:[{mb:5,gap:1.5,display:"flex",textAlign:"start",whiteSpace:"pre-line",flexDirection:"column"},...Array.isArray(r)?r:[r]],...n,children:[e.jsx(a,{variant:"h4",children:i}),t&&e.jsx(a,{variant:"body2",sx:{color:"text.secondary"},children:t})]})}export{l as S};

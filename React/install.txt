@@ -1,0 +1,18 @@
+# 이전 방법(권장되지 않음)
+#npx create-react-app cranking
+#npm -i -s react-router-dom
+#npm install @mui/material @emotion/react @emotion/styled
+
+# 새로운 방법
+# 1️⃣ 새로운 프로젝트 생성 (React + TypeScript 선택 가능)
+npm create vite@latest cranking --template react
+
+# 2️⃣ 프로젝트 폴더로 이동
+cd cranking
+
+# 3️⃣ 필요한 패키지 설치
+npm install
+npm install react-router-dom @mui/material @emotion/react @emotion/styled
+
+# 4️⃣ 개발 서버 실행
+npm run dev

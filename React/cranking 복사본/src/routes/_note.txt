@@ -1,0 +1,7 @@
+src/routes
+리엑트 라우팅 설정을 정의한 디렉토리
+
+components: 
+hooks: 
+sections: routesSection를 정의. 각 페이지별로 레이아웃과 내부 요소가 정의되어있음.
+path.js: 라우팅 경로들을 정의

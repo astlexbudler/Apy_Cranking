@@ -1,0 +1,1 @@
+import{j as t,q as i}from"./index-OSHjpEom.js";import{B as e}from"./button-goback-D5HbDokW.js";import{S as s}from"./section-title-DXBIhfo3.js";function m(){return t.jsxs(i,{sx:{mt:{xs:2,md:3},minHeight:"100vh"},children:[t.jsx(e,{}),t.jsx(s,{title:"수리 요청 상세",description:"12가 3456 차량 수리 요청"})]})}export{m as D};
